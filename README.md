@@ -27,5 +27,7 @@ pip install opencv-python-headless
 apt-get install libgtk2.0-dev pkg-config -y
 apt-get install ffmpeg libsm6 libxext6  -y
 apt-get install libgl1 -y
+# for export ipynb file to PDF formate
+apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic -y
 ```
 
