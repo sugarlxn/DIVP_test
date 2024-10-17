@@ -33,5 +33,7 @@ apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic -y
 
 ## 其他
 附上一张数字图像处理经典图像
+
 ![lena](./project02/proj02-images/lena_std.bmp)
+
 > 这张图给人有种迷离的感觉
