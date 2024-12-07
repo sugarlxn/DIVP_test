@@ -1,4 +1,5 @@
-FROM nvcr.io/nvidia/cuda:12.1.0-runtime-ubuntu20.04
+# FROM nvcr.io/nvidia/cuda:12.1.0-runtime-ubuntu20.04
+FROM ubuntu:jammy
 
 # setup lable
 LABEL maintainer="lxn12345"
@@ -22,12 +23,11 @@ RUN cp -a /etc/apt/sources.list /etc/apt/sources.list.bak && \
     apt-get install -y --no-install-recommends python3-pip && \
     apt-get install libgtk2.0-dev pkg-config -y && \
     apt-get install ffmpeg libsm6 libxext6  -y && \
-    apt-get install libgl1 -y && \
-    python3 -m pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple --upgrade pip && \
+    apt-get install libgl1 -y 
+
+# install python packages
+RUN python3 -m pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple --upgrade pip && \
     pip config set global.index-url https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple && \
-    pip install torch==1.12.0 && \
-    pip install torchvision==0.13.0 && \
-    pip install d2l==0.17.6 && \
     pip install jupyter && \
     pip install opencv-python  && \
     pip install opencv-python-headless
